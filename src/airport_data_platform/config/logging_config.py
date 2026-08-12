@@ -1,16 +1,25 @@
 import logging
 from pathlib import Path
 
+def logging_config(stage, dataset):
 
-def logging_config(stage,dataset):
+    log_dir = Path("logs") / stage
+    log_dir.mkdir(parents=True, exist_ok=True)
 
-  make_dir = Path("logs") /stage
-  make_dir.mkdir(parents=True, exist_ok=True)
-  log_file=make_dir / f"{dataset}.log"
+    log_file = log_dir / f"{dataset}.log"
 
-  logging.basicConfig(
-    filename=log_file,
-    level=logging.INFO,
-    format="%(asctime)s:%(levelname)s:%(message)s",
-  )
-  
+    logger = logging.getLogger(dataset)
+    logger.setLevel(logging.INFO)
+
+    if not logger.handlers:
+
+        handler = logging.FileHandler(log_file)
+
+        formatter = logging.Formatter(
+            "%(asctime)s - %(levelname)s - %(message)s"
+        )
+
+        handler.setFormatter(formatter)
+        logger.addHandler(handler)
+
+    return logger

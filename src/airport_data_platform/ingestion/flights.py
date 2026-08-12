@@ -5,13 +5,27 @@ import logging
 
 
 def  download_flight_data():
-  logging_config("ingestion","flight_data")
+  logging=logging_config("ingestion","flight_data")
 
 
   logging.info("Checking data folder.")
   make_dir=Path("data/raw/flight_data")
+  data_file = make_dir / "flight_data_2024.csv"
+  if data_file.exists():
+
+        logging.info(
+            "Flight data already exists. Skipping download."
+        )
+
+        print(
+            "Flight data already exists. Skipping download."
+        )
+
+        return
+
+    # Create folder if it doesn't exist
   if make_dir.exists():
-    logging.info("Data folder exists.")
+      logging.info("Data folder exists.")
   else:
     logging.info("Data folder does not exist. Creating it.")
     make_dir.mkdir(parents=True, exist_ok=True)
@@ -40,9 +54,5 @@ def  download_flight_data():
         logging.error(f"Error occurred while downloading flight data: {e}")
         print("Error occurred while downloading flight data. Check logs for details.")
 
-
-
-
-
-
-download_flight_data()
+if __name__ == "__main__":
+    download_flight_data()

@@ -1,0 +1,12 @@
+# pathlab
+        use for path like help you work with file paths and folders in Python
+        example:  
+        path(airport_data_platform/data/raw/flight_data/flight_data_2024.csv)
+
+#subprocess 
+           it allow python to run shell command in terminal
+
+
+
+
+
