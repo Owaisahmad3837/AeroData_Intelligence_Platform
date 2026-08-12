@@ -216,3 +216,4 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+data/raw/flight_data/flight_data_2024.csv
