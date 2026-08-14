@@ -1,341 +1,111 @@
-
-import time
 from pathlib import Path
 
-import pandas as pd
-import requests
+import cdsapi
 
 from ..config.logging_config import logging_config as log
 
 
-OPEN_METEO_URL = (
-    "https://archive-api.open-meteo.com/v1/archive"
-)
-
-AIRPORT_DATA = Path(
-    "data/raw/airport_data/airports.csv"
-)
-
-OUTPUT_DIR = Path(
-    "data/raw/weather_data"
-)
-
-OUTPUT_FILE = OUTPUT_DIR / "weather.csv"
-
-START_DATE = "2024-01-01"
-END_DATE = "2025-01-01"
-
-
-HOURLY_VARIABLES = [
-    "temperature_2m",
-    "relative_humidity_2m",
-    "precipitation",
-    "rain",
-    "weather_code",
-    "cloud_cover",
-    "wind_speed_10m",
-    "wind_direction_10m",
-    "visibility",
-]
+dataset = "reanalysis-era5-single-levels"
 
 
 def download_weather_data():
+    logging = log("ingestion", "weather_data")
 
-    print("========== Downloading Weather Data ==========")
+    # ---------------------------------------------------------
+    # 1. Check/Create data folder
+    # ---------------------------------------------------------
 
-    logger = log(
-        "ingestion",
-        "weather_data"
-    )
+    logging.info("Checking weather data folder.")
 
-    # --------------------------------------------------
-    # 1. Check airport CSV
-    # --------------------------------------------------
+    make_dir = Path("data/raw/weather_data")
 
-    print("Checking airport CSV...")
-
-    if not AIRPORT_DATA.exists():
-
-        logger.error(
-            "Airport CSV file not found."
-        )
-
-        print(
-            "Airport CSV file not found."
-        )
-
-        return
-
-    logger.info(
-        "Airport CSV file found."
-    )
-
-    # --------------------------------------------------
-    # 2. Read airport CSV
-    # --------------------------------------------------
-
-    airport_csv_df = pd.read_csv(
-        AIRPORT_DATA
-    )
-
-    logger.info(
-        f"Loaded {len(airport_csv_df)} airports."
-    )
-
-    print(
-        f"Loaded {len(airport_csv_df)} airports."
-    )
-
-    # --------------------------------------------------
-    # 3. Create output directory
-    # --------------------------------------------------
-
-    OUTPUT_DIR.mkdir(
-        parents=True,
-        exist_ok=True
-    )
-
-    logger.info(
-        f"Weather output directory: "
-        f"{OUTPUT_DIR.resolve()}"
-    )
-
-    # --------------------------------------------------
-    # 4. Start processing airports
-    # --------------------------------------------------
-
-    print(
-        "Downloading weather data..."
-    )
-
-    for index, airport in airport_csv_df.iterrows():
-
-        airport_id = airport["Airport ID"]
-        latitude = airport["Latitude"]
-        longitude = airport["Longitude"]
-        airport_name = airport["Name"]
-
-        print(
-            f"[{index + 1}/{len(airport_csv_df)}] "
-            f"{airport_name} (ID: {airport_id})"
-        )
-
-        logger.info(
-            f"Starting airport {airport_id}: "
-            f"{airport_name}"
-        )
-
-        params = {
-            "latitude": latitude,
-            "longitude": longitude,
-            "start_date": START_DATE,
-            "end_date": END_DATE,
-            "hourly": ",".join(
-                HOURLY_VARIABLES
-            ),
-            "timezone": "auto",
-        }
-
-        # --------------------------------------------------
-        # 5. Request with retry
-        # --------------------------------------------------
-
-        max_retries = 5
-
-        for attempt in range(max_retries):
-
-            try:
-
-                response = requests.get(
-                    OPEN_METEO_URL,
-                    params=params,
-                    timeout=60
-                )
-
-                # Rate limit
-                if response.status_code == 429:
-
-                    wait_time = 30 * (attempt + 1)
-
-                    logger.warning(
-                        f"Rate limit reached for "
-                        f"airport {airport_id}. "
-                        f"Waiting {wait_time} seconds..."
-                    )
-
-                    print(
-                        f"Rate limit reached. "
-                        f"Waiting {wait_time} seconds..."
-                    )
-
-                    time.sleep(wait_time)
-
-                    continue
-
-                # Other HTTP errors
-                response.raise_for_status()
-
-                # Success
-                data = response.json()
-
-                break
-
-            except requests.RequestException as e:
-
-                logger.error(
-                    f"Request failed for "
-                    f"airport {airport_id}: {e}"
-                )
-
-                if attempt == max_retries - 1:
-
-                    print(
-                        f"Skipping airport "
-                        f"{airport_id}."
-                    )
-
-                    data = None
-
-                    break
-
-                wait_time = 10 * (attempt + 1)
-
-                print(
-                    f"Retrying in "
-                    f"{wait_time} seconds..."
-                )
-
-                time.sleep(wait_time)
-
-        # --------------------------------------------------
-        # 6. Check API response
-        # --------------------------------------------------
-
-        if data is None:
-
-            continue
-
-        if "hourly" not in data:
-
-            logger.error(
-                f"No hourly data for "
-                f"airport {airport_id}."
-            )
-
-            logger.error(
-                f"API response: {data}"
-            )
-
-            print(
-                f"No hourly data for "
-                f"airport {airport_id}. Skipping."
-            )
-
-            continue
-
-        # --------------------------------------------------
-        # 7. Convert hourly data to DataFrame
-        # --------------------------------------------------
-
-        weather_data = pd.DataFrame(
-            data["hourly"]
-        )
-
-        if weather_data.empty:
-
-            logger.warning(
-                f"Empty weather data for "
-                f"airport {airport_id}."
-            )
-
-            continue
-
-        # --------------------------------------------------
-        # 8. Add airport information
-        # --------------------------------------------------
-
-        weather_data["airport_id"] = airport_id
-
-        weather_data["Latitude"] = latitude
-
-        weather_data["Longitude"] = longitude
-
-        weather_data["Airport Name"] = airport_name
-
-        # --------------------------------------------------
-        # 9. Save immediately
-        # --------------------------------------------------
-
-        weather_data.to_csv(
-            OUTPUT_FILE,
-            mode="a",
-            header=not OUTPUT_FILE.exists(),
-            index=False
-        )
-
-        # --------------------------------------------------
-        # 10. Success message
-        # --------------------------------------------------
-
-        logger.info(
-            f"Airport {airport_id} "
-            f"{airport_name} "
-            f"downloaded and saved successfully."
-        )
-
-        print(
-            f"Weather data for airport "
-            f"{airport_name} "
-            f"(ID: {airport_id}) "
-            f"downloaded and saved successfully."
-        )
-
-        # --------------------------------------------------
-        # 11. Small delay
-        # --------------------------------------------------
-
-        time.sleep(2)
-
-    # --------------------------------------------------
-    # 12. Final check
-    # --------------------------------------------------
-
-    if OUTPUT_FILE.exists():
-
-        file_size = OUTPUT_FILE.stat().st_size
-
-        logger.info(
-            f"Weather CSV created successfully: "
-            f"{OUTPUT_FILE.resolve()}"
-        )
-
-        print()
-        print(
-            "========== Weather Download Completed =========="
-        )
-
-        print(
-            f"CSV file saved successfully:"
-        )
-
-        print(
-            OUTPUT_FILE.resolve()
-        )
-
-        print(
-            f"File size: {file_size / 1024 / 1024:.2f} MB"
-        )
-
+    if make_dir.exists():
+        logging.info("Weather data folder exists.")
     else:
+        logging.info("Weather data folder does not exist. Creating it.")
 
-        logger.error(
-            "Weather CSV file was not created."
+        make_dir.mkdir(parents=True, exist_ok=True)
+
+        logging.info("Weather data folder created successfully.")
+
+    # ---------------------------------------------------------
+    # 2. ERA5 request
+    # ---------------------------------------------------------
+
+    request = {
+        "product_type": ["reanalysis"],
+
+        "variable": [
+            "10m_u_component_of_wind",
+            "10m_v_component_of_wind",
+            "2m_dewpoint_temperature",
+            "2m_temperature",
+            "mean_sea_level_pressure",
+            "surface_pressure",
+            "total_precipitation",
+            "total_cloud_cover"
+        ],
+
+        "year": ["2024"],
+
+        "month": [
+            "01", "02", "03",
+            "04", "05", "06",
+            "07", "08", "09",
+            "10", "11", "12"
+        ],
+
+        "day": [
+            "01", "02", "03",
+            "04", "05", "06",
+            "07", "08", "09",
+            "10", "11", "12",
+            "13", "14", "15",
+            "16", "17", "18",
+            "19", "20", "21",
+            "22", "23", "24",
+            "25", "26", "27",
+            "28", "29", "30", "31"
+        ],
+
+        "time": ["23:00"],
+
+        "data_format": "netcdf",
+
+        "download_format": "zip",
+
+        "area": [90, -180, -90, 180]
+    }
+
+    # ---------------------------------------------------------
+    # 3. Download weather data
+    # ---------------------------------------------------------
+
+    file_path = make_dir / "era5_2024_23utc.zip"
+
+    try:
+        logging.info("Connecting to Copernicus CDS...")
+
+        client = cdsapi.Client()
+
+        logging.info("Connected to Copernicus CDS successfully.")
+
+        logging.info("Starting ERA5 weather data download.")
+        logging.info(f"Dataset: {dataset}")
+        logging.info(f"Output file: {file_path}")
+
+        client.retrieve(
+            dataset,
+            request,
+            str(file_path)
         )
 
-        print(
-            "ERROR: Weather CSV file was not created."
-        )
+        logging.info("Weather data downloaded successfully.")
+        logging.info(f"Weather data saved to: {file_path}")
 
+        print(f"Weather data downloaded successfully: {file_path}")
 
-if __name__ == "__main__":
-    download_weather_data()
+    except Exception as e:
+        logging.error(f"Error occurred while downloading weather data: {e}")
+
+        print(f"Weather data download failed: {e}")
