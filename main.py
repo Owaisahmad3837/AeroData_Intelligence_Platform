@@ -1,8 +1,8 @@
-
+from src.airport_data_platform.validation.flight import flight_validation
 
 def main():
 
-  print("welcome")
+  flight_validation()
 
 
 if __name__ == "__main__":
