@@ -1,0 +1,12 @@
+2026-08-12 01:56:13,441:INFO:Checking data folder.
+2026-08-12 01:56:13,441:INFO:Data folder does not exist. Creating it.
+2026-08-12 01:56:13,442:INFO:Downloading flight data from Kaggle.
+2026-08-12 01:56:19,348:ERROR:Error occurred while downloading flight data: Command '['kaggle', 'datasets', 'download', '-d', 'hrishitpatil/flight-data-2024', '-f', 'flight_data_2024.csv', '-p', 'data/raw/flight_data']' returned non-zero exit status 1.
+2026-08-12 01:56:29,801:INFO:Checking data folder.
+2026-08-12 01:56:29,802:INFO:Data folder exists.
+2026-08-12 01:56:29,802:INFO:Downloading flight data from Kaggle.
+2026-08-12 01:56:34,726:ERROR:Error occurred while downloading flight data: Command '['kaggle', 'datasets', 'download', '-d', 'hrishitpatil/flight-data-2024', '-f', 'flight_data_2024.csv', '-p', 'data/raw/flight_data']' returned non-zero exit status 1.
+2026-08-12 01:57:15,996:INFO:Checking data folder.
+2026-08-12 01:57:15,996:INFO:Data folder exists.
+2026-08-12 01:57:15,996:INFO:Downloading flight data from Kaggle.
+2026-08-12 02:32:24,533:INFO:Flight data downloaded successfully.

@@ -1,0 +1,253 @@
+2026-08-16 02:50:34,955 - INFO - READ Airline file....
+2026-08-16 02:50:34,979 - INFO - READ Airline file complete
+2026-08-16 02:50:34,980 - INFO - column names:Index(['Airline ID', 'Name', 'Alias', 'IATA', 'ICAO', 'Callsign', 'Country',
+       'Active'],
+      dtype='str') 
+2026-08-16 02:50:35,000 - INFO - head:   Airline ID                                          Name Alias IATA ICAO Callsign         Country Active
+0          -1                                       Unknown    \N    -  NaN       \N              \N      Y
+1           1                                Private flight    \N    -  NaN      NaN             NaN      Y
+2           2                                   135 Airways    \N  NaN  GNL  GENERAL   United States      N
+3           3                                 1Time Airline    \N   1T  RNX  NEXTIME    South Africa      Y
+4           4  2 Sqn No 1 Elementary Flying Training School    \N  NaN  WYT      NaN  United Kingdom      N 
+2026-08-16 02:50:35,001 - INFO - Data Types:Airline ID    int64
+Name            str
+Alias           str
+IATA            str
+ICAO            str
+Callsign        str
+Country         str
+Active          str
+dtype: object 
+2026-08-16 02:50:35,001 - INFO - READ Airline file....
+2026-08-16 02:50:35,011 - INFO - READ airplane file complete
+2026-08-16 02:50:35,012 - INFO - column names:Index(['Name', 'IATA code', 'ICAO code'], dtype='str') 
+2026-08-16 02:50:35,022 - INFO - head:                                           Name IATA code ICAO code
+0                       Aerospatiale (Nord) 262       ND2      N262
+1  Aerospatiale (Sud Aviation) Se.210 Caravelle       CRV      S210
+2                  Aerospatiale SN.601 Corvette       NDC      S601
+3                Aerospatiale/Alenia ATR 42-300       AT4      AT43
+4                Aerospatiale/Alenia ATR 42-500       AT5      AT45 
+2026-08-16 02:50:35,023 - INFO - Data Types:Airline ID    int64
+Name            str
+Alias           str
+IATA            str
+ICAO            str
+Callsign        str
+Country         str
+Active          str
+dtype: object 
+2026-08-16 02:50:35,023 - INFO - READ Airport file....
+2026-08-16 02:51:03,132 - INFO - READ Airline file....
+2026-08-16 02:51:03,153 - INFO - READ Airline file complete
+2026-08-16 02:51:03,154 - INFO - column names:Index(['Airline ID', 'Name', 'Alias', 'IATA', 'ICAO', 'Callsign', 'Country',
+       'Active'],
+      dtype='str') 
+2026-08-16 02:51:03,175 - INFO - head:   Airline ID                                          Name Alias IATA ICAO Callsign         Country Active
+0          -1                                       Unknown    \N    -  NaN       \N              \N      Y
+1           1                                Private flight    \N    -  NaN      NaN             NaN      Y
+2           2                                   135 Airways    \N  NaN  GNL  GENERAL   United States      N
+3           3                                 1Time Airline    \N   1T  RNX  NEXTIME    South Africa      Y
+4           4  2 Sqn No 1 Elementary Flying Training School    \N  NaN  WYT      NaN  United Kingdom      N 
+2026-08-16 02:51:03,176 - INFO - Data Types:Airline ID    int64
+Name            str
+Alias           str
+IATA            str
+ICAO            str
+Callsign        str
+Country         str
+Active          str
+dtype: object 
+2026-08-16 02:51:03,176 - INFO - READ Airline file....
+2026-08-16 02:51:03,179 - INFO - READ airplane file complete
+2026-08-16 02:51:03,180 - INFO - column names:Index(['Name', 'IATA code', 'ICAO code'], dtype='str') 
+2026-08-16 02:51:03,190 - INFO - head:                                           Name IATA code ICAO code
+0                       Aerospatiale (Nord) 262       ND2      N262
+1  Aerospatiale (Sud Aviation) Se.210 Caravelle       CRV      S210
+2                  Aerospatiale SN.601 Corvette       NDC      S601
+3                Aerospatiale/Alenia ATR 42-300       AT4      AT43
+4                Aerospatiale/Alenia ATR 42-500       AT5      AT45 
+2026-08-16 02:51:03,191 - INFO - Data Types:Airline ID    int64
+Name            str
+Alias           str
+IATA            str
+ICAO            str
+Callsign        str
+Country         str
+Active          str
+dtype: object 
+2026-08-16 02:51:03,191 - INFO - READ Airport file....
+2026-08-16 02:52:25,058 - INFO - READ Airline file....
+2026-08-16 02:52:25,084 - INFO - READ Airline file complete
+2026-08-16 02:52:25,085 - INFO - column names:Index(['Airline ID', 'Name', 'Alias', 'IATA', 'ICAO', 'Callsign', 'Country',
+       'Active'],
+      dtype='str') 
+2026-08-16 02:52:25,105 - INFO - head:   Airline ID                                          Name Alias IATA ICAO Callsign         Country Active
+0          -1                                       Unknown    \N    -  NaN       \N              \N      Y
+1           1                                Private flight    \N    -  NaN      NaN             NaN      Y
+2           2                                   135 Airways    \N  NaN  GNL  GENERAL   United States      N
+3           3                                 1Time Airline    \N   1T  RNX  NEXTIME    South Africa      Y
+4           4  2 Sqn No 1 Elementary Flying Training School    \N  NaN  WYT      NaN  United Kingdom      N 
+2026-08-16 02:52:25,106 - INFO - Data Types:Airline ID    int64
+Name            str
+Alias           str
+IATA            str
+ICAO            str
+Callsign        str
+Country         str
+Active          str
+dtype: object 
+2026-08-16 02:52:25,107 - INFO - READ Airline file....
+2026-08-16 02:52:25,109 - INFO - READ airplane file complete
+2026-08-16 02:52:25,110 - INFO - column names:Index(['Name', 'IATA code', 'ICAO code'], dtype='str') 
+2026-08-16 02:52:25,120 - INFO - head:                                           Name IATA code ICAO code
+0                       Aerospatiale (Nord) 262       ND2      N262
+1  Aerospatiale (Sud Aviation) Se.210 Caravelle       CRV      S210
+2                  Aerospatiale SN.601 Corvette       NDC      S601
+3                Aerospatiale/Alenia ATR 42-300       AT4      AT43
+4                Aerospatiale/Alenia ATR 42-500       AT5      AT45 
+2026-08-16 02:52:25,120 - INFO - Data Types:Airline ID    int64
+Name            str
+Alias           str
+IATA            str
+ICAO            str
+Callsign        str
+Country         str
+Active          str
+dtype: object 
+2026-08-16 02:52:25,121 - INFO - READ Airport file....
+2026-08-16 02:53:13,726 - INFO - READ Airline file....
+2026-08-16 02:53:13,747 - INFO - READ Airline file complete
+2026-08-16 02:53:13,748 - INFO - column names:Index(['Airline ID', 'Name', 'Alias', 'IATA', 'ICAO', 'Callsign', 'Country',
+       'Active'],
+      dtype='str') 
+2026-08-16 02:53:13,772 - INFO - head:   Airline ID                                          Name Alias IATA ICAO Callsign         Country Active
+0          -1                                       Unknown    \N    -  NaN       \N              \N      Y
+1           1                                Private flight    \N    -  NaN      NaN             NaN      Y
+2           2                                   135 Airways    \N  NaN  GNL  GENERAL   United States      N
+3           3                                 1Time Airline    \N   1T  RNX  NEXTIME    South Africa      Y
+4           4  2 Sqn No 1 Elementary Flying Training School    \N  NaN  WYT      NaN  United Kingdom      N 
+2026-08-16 02:53:13,773 - INFO - Data Types:Airline ID    int64
+Name            str
+Alias           str
+IATA            str
+ICAO            str
+Callsign        str
+Country         str
+Active          str
+dtype: object 
+2026-08-16 02:53:13,773 - INFO - READ Airline file....
+2026-08-16 02:53:13,775 - INFO - READ airplane file complete
+2026-08-16 02:53:13,776 - INFO - column names:Index(['Name', 'IATA code', 'ICAO code'], dtype='str') 
+2026-08-16 02:53:13,785 - INFO - head:                                           Name IATA code ICAO code
+0                       Aerospatiale (Nord) 262       ND2      N262
+1  Aerospatiale (Sud Aviation) Se.210 Caravelle       CRV      S210
+2                  Aerospatiale SN.601 Corvette       NDC      S601
+3                Aerospatiale/Alenia ATR 42-300       AT4      AT43
+4                Aerospatiale/Alenia ATR 42-500       AT5      AT45 
+2026-08-16 02:53:13,786 - INFO - Data Types:Airline ID    int64
+Name            str
+Alias           str
+IATA            str
+ICAO            str
+Callsign        str
+Country         str
+Active          str
+dtype: object 
+2026-08-16 02:53:13,786 - INFO - READ Airport file....
+2026-08-16 02:53:13,835 - INFO - READ Airport file complete
+2026-08-16 02:53:13,839 - INFO - column names:Index(['Airport ID', 'Name', 'City', 'Country', 'IATA', 'ICAO', 'Latitude',
+       'Longitude', 'Altitude', 'Timezone', 'DST', 'Tz database time zone',
+       'Type', 'Source'],
+      dtype='str') 
+2026-08-16 02:53:13,889 - INFO - head:   Airport ID                                         Name          City           Country IATA  ICAO  ...  Altitude  Timezone  DST Tz database time zone     Type       Source
+0           1                               Goroka Airport        Goroka  Papua New Guinea  GKA  AYGA  ...      5282        10    U  Pacific/Port_Moresby  airport  OurAirports
+1           2                               Madang Airport        Madang  Papua New Guinea  MAG  AYMD  ...        20        10    U  Pacific/Port_Moresby  airport  OurAirports
+2           3                 Mount Hagen Kagamuga Airport   Mount Hagen  Papua New Guinea  HGU  AYMH  ...      5388        10    U  Pacific/Port_Moresby  airport  OurAirports
+3           4                               Nadzab Airport        Nadzab  Papua New Guinea  LAE  AYNZ  ...       239        10    U  Pacific/Port_Moresby  airport  OurAirports
+4           5  Port Moresby Jacksons International Airport  Port Moresby  Papua New Guinea  POM  AYPY  ...       146        10    U  Pacific/Port_Moresby  airport  OurAirports
+
+[5 rows x 14 columns] 
+2026-08-16 02:53:13,891 - INFO - Data Types:Airport ID                 int64
+Name                         str
+City                         str
+Country                      str
+IATA                         str
+ICAO                         str
+Latitude                 float64
+Longitude                float64
+Altitude                   int64
+Timezone                     str
+DST                          str
+Tz database time zone        str
+Type                         str
+Source                       str
+dtype: object 
+2026-08-16 02:53:13,891 - INFO - READ Flight file....
+2026-08-16 02:54:34,246 - INFO - READ Airline file....
+2026-08-16 02:54:34,271 - INFO - READ Airline file complete
+2026-08-16 02:54:34,272 - INFO - column names:Index(['Airline ID', 'Name', 'Alias', 'IATA', 'ICAO', 'Callsign', 'Country',
+       'Active'],
+      dtype='str') 
+2026-08-16 02:54:34,294 - INFO - head:   Airline ID                                          Name Alias IATA ICAO Callsign         Country Active
+0          -1                                       Unknown    \N    -  NaN       \N              \N      Y
+1           1                                Private flight    \N    -  NaN      NaN             NaN      Y
+2           2                                   135 Airways    \N  NaN  GNL  GENERAL   United States      N
+3           3                                 1Time Airline    \N   1T  RNX  NEXTIME    South Africa      Y
+4           4  2 Sqn No 1 Elementary Flying Training School    \N  NaN  WYT      NaN  United Kingdom      N 
+2026-08-16 02:54:34,295 - INFO - Data Types:Airline ID    int64
+Name            str
+Alias           str
+IATA            str
+ICAO            str
+Callsign        str
+Country         str
+Active          str
+dtype: object 
+2026-08-16 02:54:34,295 - INFO - READ Airline file....
+2026-08-16 02:54:34,297 - INFO - READ airplane file complete
+2026-08-16 02:54:34,298 - INFO - column names:Index(['Name', 'IATA code', 'ICAO code'], dtype='str') 
+2026-08-16 02:54:34,307 - INFO - head:                                           Name IATA code ICAO code
+0                       Aerospatiale (Nord) 262       ND2      N262
+1  Aerospatiale (Sud Aviation) Se.210 Caravelle       CRV      S210
+2                  Aerospatiale SN.601 Corvette       NDC      S601
+3                Aerospatiale/Alenia ATR 42-300       AT4      AT43
+4                Aerospatiale/Alenia ATR 42-500       AT5      AT45 
+2026-08-16 02:54:34,308 - INFO - Data Types:Airline ID    int64
+Name            str
+Alias           str
+IATA            str
+ICAO            str
+Callsign        str
+Country         str
+Active          str
+dtype: object 
+2026-08-16 02:54:34,308 - INFO - READ Airport file....
+2026-08-16 02:54:34,351 - INFO - READ Airport file complete
+2026-08-16 02:54:34,352 - INFO - column names:Index(['Airport ID', 'Name', 'City', 'Country', 'IATA', 'ICAO', 'Latitude',
+       'Longitude', 'Altitude', 'Timezone', 'DST', 'Tz database time zone',
+       'Type', 'Source'],
+      dtype='str') 
+2026-08-16 02:54:34,383 - INFO - head:   Airport ID                                         Name          City           Country IATA  ICAO  ...  Altitude  Timezone  DST Tz database time zone     Type       Source
+0           1                               Goroka Airport        Goroka  Papua New Guinea  GKA  AYGA  ...      5282        10    U  Pacific/Port_Moresby  airport  OurAirports
+1           2                               Madang Airport        Madang  Papua New Guinea  MAG  AYMD  ...        20        10    U  Pacific/Port_Moresby  airport  OurAirports
+2           3                 Mount Hagen Kagamuga Airport   Mount Hagen  Papua New Guinea  HGU  AYMH  ...      5388        10    U  Pacific/Port_Moresby  airport  OurAirports
+3           4                               Nadzab Airport        Nadzab  Papua New Guinea  LAE  AYNZ  ...       239        10    U  Pacific/Port_Moresby  airport  OurAirports
+4           5  Port Moresby Jacksons International Airport  Port Moresby  Papua New Guinea  POM  AYPY  ...       146        10    U  Pacific/Port_Moresby  airport  OurAirports
+
+[5 rows x 14 columns] 
+2026-08-16 02:54:34,385 - INFO - Data Types:Airport ID                 int64
+Name                         str
+City                         str
+Country                      str
+IATA                         str
+ICAO                         str
+Latitude                 float64
+Longitude                float64
+Altitude                   int64
+Timezone                     str
+DST                          str
+Tz database time zone        str
+Type                         str
+Source                       str
+dtype: object 
+2026-08-16 02:54:34,385 - INFO - READ Flight file....

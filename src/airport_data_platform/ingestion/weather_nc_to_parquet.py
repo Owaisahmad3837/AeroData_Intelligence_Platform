@@ -22,7 +22,7 @@ def weather_nc_to_parquet():
     )
 
     output_path = Path(
-        "data/processed/weather_data/final_weather_2024.parquet"
+        "data/processed/weather_data_2024/final_weather_2024.parquet"
     )
 
 

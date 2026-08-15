@@ -1,0 +1,5 @@
+2026-08-12 04:11:53,329 - INFO - Checking data folder.
+2026-08-12 04:11:53,329 - INFO - Data folder does not exist. Creating it.
+2026-08-12 04:11:53,329 - INFO - Data folder created successfully.
+2026-08-12 04:11:53,329 - INFO - Downloading route data from Kaggle...
+2026-08-12 04:12:21,717 - INFO - Route data downloaded successfully.

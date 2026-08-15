@@ -1,0 +1,5 @@
+2026-08-12 04:11:24,736 - INFO - Checking data folder.
+2026-08-12 04:11:24,736 - INFO - Data folder does not exist. Creating it.
+2026-08-12 04:11:24,737 - INFO - Data folder created successfully.
+2026-08-12 04:11:24,737 - INFO - Downloading airport data from Kaggle...
+2026-08-12 04:11:53,328 - INFO - Airport data downloaded successfully.
