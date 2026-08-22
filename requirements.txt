@@ -1,0 +1,12 @@
+pathlab
+kaggle
+-e
+pandas
+cdsapi
+netCDF4
+h5netcdf
+parquet
+pyarrow
+git lfs
+psycopg2-binary
+python-dotenv
