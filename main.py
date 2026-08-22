@@ -1,7 +1,7 @@
-from src.airport_data_platform.validation.airplane import airplane_validation
+from src.airport_data_platform.validation.airport import airport_validation
 
 def main():
-    airplane_validation()
+    airport_validation()
 
 if __name__ == "__main__":
     main()
