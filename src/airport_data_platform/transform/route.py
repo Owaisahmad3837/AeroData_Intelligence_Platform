@@ -40,51 +40,57 @@ def route_transformation():
         "Equipment": "equipment"
     })
 
-  df["airline_code"]=(df["airline_code"].str.strip().str.upper())
-
-  # Clean airline code
   df["airline_code"] = (
-        df["airline_code"]
-        .str.strip()
-        .str.upper()
-    )
+    df["airline_code"]
+    .str.strip()
+    .str.upper()
+)
 
-    # Clean airport codes
   df["source_airport_code"] = (
-        df["source_airport_code"]
-        .str.strip()
-        .str.upper()
-    )
+    df["source_airport_code"]
+    .str.strip()
+    .str.upper()
+)
 
   df["destination_airport_code"] = (
-        df["destination_airport_code"]
-        .str.strip()
-        .str.upper()
-    )
+    df["destination_airport_code"]
+    .str.strip()
+    .str.upper()
+)
 
-    # Convert IDs to numeric
-  df["airline_id"] = pd.to_numeric(df["airline_id"])
-  df["source_airport_id"] = pd.to_numeric(df["source_airport_id"])
-  df["destination_airport_id"] = pd.to_numeric(df["destination_airport_id"])
+  df["airline_id"] = pd.to_numeric(
+    df["airline_id"], errors="coerce"
+).astype("Int64")
 
-    # Convert stops to numeric
-  df["stops"] = pd.to_numeric(df["stops"])
+  df["source_airport_id"] = pd.to_numeric(
+    df["source_airport_id"], errors="coerce"
+).astype("Int64")
 
-    # Clean codeshare
+  df["destination_airport_id"] = pd.to_numeric(
+    df["destination_airport_id"], errors="coerce"
+).astype("Int64")
+
+  df["stops"] = pd.to_numeric(
+    df["stops"], errors="coerce"
+).astype("Int64")
+
   df["codeshare"] = (
-        df["codeshare"]
-        .fillna("")
-        .str.strip()
-        .str.upper()
-    )
+    df["codeshare"]
+    .fillna("")
+    .str.strip()
+    .str.upper()
+    .map({
+        "Y": True,
+        "N": False
+    })
+)
 
-    # Clean equipment
   df["equipment"] = (
-        df["equipment"]
-        .fillna("")
-        .str.strip()
-        .str.upper()
-    )
+    df["equipment"]
+    .fillna("")
+    .str.strip()
+    .str.upper()
+)
 
 
 

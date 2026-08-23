@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS airline(
     airline_name VARCHAR(255) NOT NULL,
     iata_code VARCHAR(10),
     icao_code VARCHAR(10),
-    callsign  varchar(15),
+    callsign  varchar(50),
     country VARCHAR(100), 
     active  BOOLEAN
 

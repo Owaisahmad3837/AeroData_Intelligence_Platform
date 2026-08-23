@@ -1,20 +1,25 @@
 import pandas as pd
 from pathlib import Path
+route_path=Path("data/transform/route_data/routes.csv")
 
-Weather_path=Path("data/validation/good/weather_data/weather.parquet")
+df = pd.read_csv(route_path)
 
+print("\nRoute ID columns:")
+print(df[
+    [
+        "airline_id",
+        "source_airport_id",
+        "destination_airport_id",
+        "stops"
+    ]
+].max())
 
-df=pd.read_parquet(Weather_path)
-
-print(df.columns)
-print(df[[
-    "u10",
-    "v10",
-    "d2m",
-    "t2m",
-    "msl",
-    "sp",
-    "tcc",
-    "accum_tp",
-    "max_fg10"
-]].head())
+print("\nData types:")
+print(df[
+    [
+        "airline_id",
+        "source_airport_id",
+        "destination_airport_id",
+        "stops"
+    ]
+].dtypes)
