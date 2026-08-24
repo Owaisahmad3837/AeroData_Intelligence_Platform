@@ -10,3 +10,4 @@ pyarrow
 git lfs
 psycopg2-binary
 python-dotenv
+streamlit
