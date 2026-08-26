@@ -11,6 +11,7 @@ DASHBOARD_DIR = Path(__file__).resolve().parent
 PAGES_DIR = DASHBOARD_DIR / "pages"
 
 BI_DIR = PAGES_DIR / "Business_Intelligence"
+Op_DIR = PAGES_DIR / "Operations"
 
 
 # ============================================================
@@ -58,6 +59,13 @@ def create_navigation():
             ),
 
         ],
+          "📊 Operations": [
+        
+                    st.Page(
+                        Op_DIR / "flight_operation.py",
+                        title="Flight Operation",
+                        icon="✈️"
+                    ),],
     }
 
     return st.navigation(pages)
