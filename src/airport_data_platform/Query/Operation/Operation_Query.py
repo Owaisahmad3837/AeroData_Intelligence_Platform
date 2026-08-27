@@ -158,3 +158,366 @@ WHERE arr_delay IS NOT NULL
 ORDER BY arr_delay DESC
 LIMIT 10
 """
+
+
+
+
+
+# ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+# ..........................................................................
+# ..........................................................................
+# ..........................................................................
+# ..........................................................................
+# ||||||||||||||||||||||||...................|||||||||||||||||||||||||||||||
+#......................... Flight and Weather...............................
+#......................... Flight and Weather...............................
+#......................... Flight and Weather...............................
+# ||||||||||||||||||||||||...................|||||||||||||||||||||||||||||||
+# ..........................................................................
+# ..........................................................................
+# ..........................................................................
+# ..........................................................................
+# ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+
+
+
+
+query_flight_in_bad_weather_count="""
+select count(*) as bad_flight_weather
+from flight f join weather w on f.flight_number=w.airport_id and date(f.flight_date)=date(w.weather_time)
+where  w.precipitation_mm>10
+or max_wind_gust >15
+   or cloud_cover_pct>90;
+"""
+
+
+
+
+
+query_flight_bad_weather_avg_delay="""
+SELECT
+    COUNT(*) AS bad_flights,
+    AVG(f.arr_delay) AS avg_delay
+
+FROM flight f
+
+JOIN weather w
+    ON f.flight_number = w.airport_id
+    AND DATE(f.flight_date) = DATE(w.weather_time)
+
+WHERE
+    (
+        w.precipitation_mm > 10
+        OR w.max_wind_gust > 15
+        OR w.cloud_cover_pct > 90
+    );
+
+"""
+
+
+query_cancelled_flight_bad_weather="""
+SELECT
+    COUNT(*) AS bad_flights,
+    count(*) filter(where f.cancelled=true) AS cancelled
+
+FROM flight f
+
+JOIN weather w
+    ON f.flight_number = w.airport_id
+    AND DATE(f.flight_date) = DATE(w.weather_time)
+
+WHERE
+    (
+        w.precipitation_mm > 10
+        OR w.max_wind_gust > 15
+        OR w.cloud_cover_pct > 90
+    );
+
+"""
+
+
+query_weather_dustribution="""
+SELECT
+    CASE
+        WHEN precipitation_mm > 10
+          OR max_wind_gust > 15
+          OR cloud_cover_pct > 90
+        THEN 'Bad Weather'
+
+        WHEN precipitation_mm > 2
+          OR max_wind_gust > 8
+          OR cloud_cover_pct > 70
+        THEN 'Moderate Weather'
+
+        ELSE 'Normal Weather'
+    END AS weather_condition,
+ count(*) as total_records
+FROM weather
+group by weather_condition
+;
+"""
+
+
+query_weather_vs_flight="""
+SELECT
+    CASE
+        WHEN w.precipitation_mm > 10
+          OR w.max_wind_gust > 15
+          OR w.cloud_cover_pct > 90
+        THEN 'Bad Weather'
+
+        WHEN w.precipitation_mm > 2
+          OR w.max_wind_gust > 8
+          OR w.cloud_cover_pct > 70
+        THEN 'Moderate Weather'
+
+        ELSE 'Normal Weather'
+    END AS weather_condition,
+    count(f.flight_id)as flight_total 
+FROM weather w join flight f on  f.flight_number = w.airport_id
+    AND DATE(f.flight_date) = DATE(w.weather_time)
+
+group by weather_condition
+;
+"""
+
+
+
+
+
+query_delay_by_weather="""
+SELECT
+    CASE
+        WHEN w.precipitation_mm > 10
+          OR w.max_wind_gust > 15
+          OR w.cloud_cover_pct > 90
+        THEN 'Bad Weather'
+
+        WHEN w.precipitation_mm > 2
+          OR w.max_wind_gust > 8
+          OR w.cloud_cover_pct > 70
+        THEN 'Moderate Weather'
+
+        ELSE 'Normal Weather'
+    END AS weather_condition,
+   COUNT(CASE WHEN f.arr_delay > 0 THEN 1 END) * 100.0
+/ NULLIF(COUNT(*), 0)as avg_delay 
+FROM weather w join flight f on  f.flight_number = w.airport_id
+    AND DATE(f.flight_date) = DATE(w.weather_time)
+
+group by weather_condition
+"""
+
+
+
+
+query_cancellation_rate_by_weather="""
+SELECT
+    CASE
+        WHEN w.precipitation_mm > 10
+          OR w.max_wind_gust > 15
+          OR w.cloud_cover_pct > 90
+        THEN 'Bad Weather'
+
+        WHEN w.precipitation_mm > 2
+          OR w.max_wind_gust > 8
+          OR w.cloud_cover_pct > 70
+        THEN 'Moderate Weather'
+
+        ELSE 'Normal Weather'
+    END AS weather_condition,
+     COUNT(*) FILTER (
+        WHERE f.cancelled = TRUE ) * 100.0
+/ NULLIF(COUNT(*), 0)as avg_delay 
+FROM weather w join flight f on  f.flight_number = w.airport_id
+    AND DATE(f.flight_date) = DATE(w.weather_time)
+
+group by weather_condition
+"""
+
+
+query_airport_effect="""
+SELECT
+    a.name,
+    w.airport_id,
+
+    CASE
+        WHEN w.precipitation_mm > 10
+          OR w.max_wind_gust > 15
+          OR w.cloud_cover_pct > 90
+        THEN 'Bad Weather'
+
+        WHEN w.precipitation_mm > 2
+          OR w.max_wind_gust > 8
+          OR w.cloud_cover_pct > 70
+        THEN 'Moderate Weather'
+
+        ELSE 'Normal Weather'
+    END AS weather_condition
+
+FROM airport a
+JOIN weather w
+    ON a.airport_id = w.airport_id
+
+LIMIT 10;
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+# ..........................................................................
+# ..........................................................................
+# ..........................................................................
+# ..........................................................................
+# ||||||||||||||||||||||||...................|||||||||||||||||||||||||||||||
+#......................... ------------------...............................
+#....................... 🛩️ Fleet / Aircraft Analysis.......................
+#......................... ------------------...............................
+# ||||||||||||||||||||||||...................|||||||||||||||||||||||||||||||
+# ..........................................................................
+# ..........................................................................
+# ..........................................................................
+# ..........................................................................
+# ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+
+
+
+
+
+#..........................fleet_kpi.....................................
+
+total_aircraft = """SELECT COUNT(*) AS total_aircraft
+FROM airplane;"""
+
+total_aircraft_types = """SELECT COUNT(DISTINCT iata_code) AS total_aircraft_types
+FROM airplane
+WHERE iata_code IS NOT NULL;"""
+
+most_used_aircraft = """SELECT
+    a.name AS aircraft,
+    COUNT(f.flight_id) AS total_flights
+FROM flight f
+JOIN airplane a
+    ON f.operating_carrier = a.iata_code
+GROUP BY a.name
+ORDER BY total_flights DESC
+LIMIT 1;"""
+
+average_aircraft_delay = """SELECT
+    AVG(arr_delay) AS avg_delay
+FROM flight
+WHERE arr_delay IS NOT NULL;"""
+
+
+#..........................fleet_composition.....................................
+
+flights_by_aircraft_type = """SELECT
+    a.name AS aircraft_type,
+    COUNT(f.flight_id) AS total_flights
+FROM flight f
+JOIN airplane a
+    ON f.operating_carrier = a.iata_code
+GROUP BY a.name
+ORDER BY total_flights DESC;"""
+
+
+#..........................aircraft_performance.....................................
+
+average_delay_by_aircraft = """SELECT
+    a.name AS aircraft_type,
+    AVG(f.arr_delay) AS avg_delay
+FROM flight f
+JOIN airplane a
+    ON f.operating_carrier = a.iata_code
+WHERE f.arr_delay IS NOT NULL
+GROUP BY a.name
+ORDER BY avg_delay DESC;"""
+
+on_time_by_aircraft = """SELECT
+    a.name AS aircraft_type,
+    COUNT(
+        CASE
+            WHEN f.arr_delay <= 0 THEN 1
+        END
+    ) * 100.0
+    / NULLIF(
+        COUNT(
+            CASE
+                WHEN f.arr_delay IS NOT NULL THEN 1
+            END
+        ),
+        0
+    ) AS on_time_percent
+FROM flight f
+JOIN airplane a
+    ON f.operating_carrier = a.iata_code
+GROUP BY a.name
+ORDER BY on_time_percent DESC;"""
+
+cancellation_rate_by_aircraft = """SELECT
+    a.name AS aircraft_type,
+    COUNT(
+        CASE
+            WHEN f.cancelled = TRUE THEN 1
+        END
+    ) * 100.0
+    / NULLIF(COUNT(*), 0) AS cancellation_rate
+FROM flight f
+JOIN airplane a
+    ON f.operating_carrier = a.iata_code
+GROUP BY a.name
+ORDER BY cancellation_rate DESC;"""
+
+
+#..........................aircraft_ranking.....................................
+
+best_performing_aircraft = """SELECT
+    a.name AS aircraft_type,
+    COUNT(f.flight_id) AS total_flights,
+    COUNT(
+        CASE
+            WHEN f.arr_delay <= 0 THEN 1
+        END
+    ) * 100.0
+    / NULLIF(
+        COUNT(
+            CASE
+                WHEN f.arr_delay IS NOT NULL THEN 1
+            END
+        ),
+        0
+    ) AS on_time_percent
+FROM flight f
+JOIN airplane a
+    ON f.operating_carrier = a.iata_code
+GROUP BY a.name
+HAVING COUNT(f.flight_id) >= 100
+ORDER BY on_time_percent DESC
+LIMIT 5;"""
+
+problem_aircraft = """SELECT
+    a.name AS aircraft_type,
+    COUNT(f.flight_id) AS total_flights,
+    AVG(f.arr_delay) AS avg_delay
+FROM flight f
+JOIN airplane a
+    ON f.operating_carrier = a.iata_code
+WHERE f.arr_delay IS NOT NULL
+GROUP BY a.name
+HAVING COUNT(f.flight_id) >= 100
+ORDER BY avg_delay DESC
+LIMIT 5;"""

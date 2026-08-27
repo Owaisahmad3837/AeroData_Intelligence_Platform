@@ -20,7 +20,22 @@ from src.airport_data_platform.Query.Operation.Operation_Query import (
     FLIGHT_STATUS,
     DELAY_BY_DAY,
     MOST_DELAYED_FLIGHTS,
+    # .....flight vs weather.....
+    query_flight_in_bad_weather_count,
+    query_flight_bad_weather_avg_delay,
+    query_cancelled_flight_bad_weather,
+    query_weather_dustribution,
+    query_weather_vs_flight,
+    query_delay_by_weather,
+    query_cancellation_rate_by_weather,
+    query_airport_effect,
+
+    # Aircraft
+    total_aircraft, total_aircraft_types, most_used_aircraft, average_aircraft_delay, flights_by_aircraft_type, average_delay_by_aircraft, on_time_by_aircraft, cancellation_rate_by_aircraft, best_performing_aircraft, problem_aircraft
+
 )
+
+
 
 
 @st.cache_data
@@ -120,6 +135,123 @@ def load_flight_operation_data():
     )
 
 
+    # ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    # ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    # ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    
+    # --------------------------------------------------------
+    #                   weather vs FLIGHTS
+    # --------------------------------------------------------
+
+    # ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    # ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    # ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+
+
+    data["flight_in_bad_weather_count"] = pd.read_sql(
+    query_flight_in_bad_weather_count,
+    conn).iloc[0]["bad_flight_weather"]
+
+    data["flight_bad_weather_avg_delay"] = pd.read_sql(
+    query_flight_bad_weather_avg_delay,
+    conn).iloc[0]["avg_delay"]
+
+    data["cancelled_flight_bad_weather"] = pd.read_sql(
+    query_cancelled_flight_bad_weather,
+    conn).iloc[0]["cancelled"]
+                #   ,,,,,,,,,,,,
+    
+    data["weather_dustribution"] = pd.read_sql(
+                query_weather_dustribution,
+                conn
+            )
+         # ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    
+    data["weather_vs_flight"] = pd.read_sql(
+                query_weather_vs_flight,
+                conn
+            )
+         # ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    
+    data["delay_by_weather"] = pd.read_sql(
+                query_delay_by_weather,
+                conn
+            )
+         # ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    
+    data["cancellation_rate_by_weather"] = pd.read_sql(
+                query_cancellation_rate_by_weather,
+                conn
+            )
+         # ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+    
+    data["airport_effect"] = pd.read_sql(
+                    query_airport_effect,
+                    conn
+                )
+             # ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        
+    
+    # ................................
+    # ........................
+    # ..................
+
+    data["total_aircraft"] = pd.read_sql(
+        total_aircraft,
+        conn
+    ).iloc[0]["total_aircraft"]
+
+    data["total_aircraft_types"] = pd.read_sql(
+        total_aircraft_types,
+        conn
+    ).iloc[0]["total_aircraft_types"]
+
+    data["most_used_aircraft"] = pd.read_sql(
+        most_used_aircraft,
+        conn
+    )
+
+    data["average_aircraft_delay"] = pd.read_sql(
+        average_aircraft_delay,
+        conn
+    ).iloc[0]["avg_delay"]
+
+    data["flights_by_aircraft_type"] = pd.read_sql(
+        flights_by_aircraft_type,
+        conn
+    )
+
+    data["average_delay_by_aircraft"] = pd.read_sql(
+        average_delay_by_aircraft,
+        conn
+    )
+
+    data["on_time_by_aircraft"] = pd.read_sql(
+        on_time_by_aircraft,
+        conn
+    )
+
+    data["cancellation_rate_by_aircraft"] = pd.read_sql(
+        cancellation_rate_by_aircraft,
+        conn
+    )
+
+    data["best_performing_aircraft"] = pd.read_sql(
+        best_performing_aircraft,
+        conn
+    )
+
+    data["problem_aircraft"] = pd.read_sql(
+        problem_aircraft,
+        conn
+    )
+
+
     conn.close()
 
     return data
+
+
+
+

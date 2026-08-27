@@ -65,7 +65,20 @@ def create_navigation():
                         Op_DIR / "flight_operation.py",
                         title="Flight Operation",
                         icon="✈️"
-                    ),],
+                    ),
+                    st.Page(
+                        Op_DIR/"weather_vs_flight.py",
+                        title="Flight vs weather",
+                        icon="🌦️"
+                    ),
+                    st.Page(
+                         Op_DIR/"Airplane_analysis.py",
+                         title="Fleet /Airplane analysis",
+                         icon="🛩️"
+                                        ),
+
+
+                    ],
     }
 
     return st.navigation(pages)
