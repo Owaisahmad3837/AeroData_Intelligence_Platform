@@ -403,121 +403,28 @@ LIMIT 10;
 total_aircraft = """SELECT COUNT(*) AS total_aircraft
 FROM airplane;"""
 
-total_aircraft_types = """SELECT COUNT(DISTINCT iata_code) AS total_aircraft_types
+
+#..........................aircraft_kpi.....................................
+
+total_aircraft_types = """SELECT
+    COUNT(*) AS total_aircraft_types
+FROM airplane;"""
+
+total_iata_codes = """SELECT
+    COUNT(DISTINCT iata_code) AS total_iata_codes
 FROM airplane
 WHERE iata_code IS NOT NULL;"""
 
-most_used_aircraft = """SELECT
-    a.name AS aircraft,
-    COUNT(f.flight_id) AS total_flights
-FROM flight f
-JOIN airplane a
-    ON f.operating_carrier = a.iata_code
-GROUP BY a.name
-ORDER BY total_flights DESC
-LIMIT 1;"""
+total_icao_codes = """SELECT
+    COUNT(DISTINCT icao_code) AS total_icao_codes
+FROM airplane
+WHERE icao_code IS NOT NULL;"""
 
-average_aircraft_delay = """SELECT
-    AVG(arr_delay) AS avg_delay
-FROM flight
-WHERE arr_delay IS NOT NULL;"""
+#..........................aircraft_reference.....................................
 
-
-#..........................fleet_composition.....................................
-
-flights_by_aircraft_type = """SELECT
-    a.name AS aircraft_type,
-    COUNT(f.flight_id) AS total_flights
-FROM flight f
-JOIN airplane a
-    ON f.operating_carrier = a.iata_code
-GROUP BY a.name
-ORDER BY total_flights DESC;"""
-
-
-#..........................aircraft_performance.....................................
-
-average_delay_by_aircraft = """SELECT
-    a.name AS aircraft_type,
-    AVG(f.arr_delay) AS avg_delay
-FROM flight f
-JOIN airplane a
-    ON f.operating_carrier = a.iata_code
-WHERE f.arr_delay IS NOT NULL
-GROUP BY a.name
-ORDER BY avg_delay DESC;"""
-
-on_time_by_aircraft = """SELECT
-    a.name AS aircraft_type,
-    COUNT(
-        CASE
-            WHEN f.arr_delay <= 0 THEN 1
-        END
-    ) * 100.0
-    / NULLIF(
-        COUNT(
-            CASE
-                WHEN f.arr_delay IS NOT NULL THEN 1
-            END
-        ),
-        0
-    ) AS on_time_percent
-FROM flight f
-JOIN airplane a
-    ON f.operating_carrier = a.iata_code
-GROUP BY a.name
-ORDER BY on_time_percent DESC;"""
-
-cancellation_rate_by_aircraft = """SELECT
-    a.name AS aircraft_type,
-    COUNT(
-        CASE
-            WHEN f.cancelled = TRUE THEN 1
-        END
-    ) * 100.0
-    / NULLIF(COUNT(*), 0) AS cancellation_rate
-FROM flight f
-JOIN airplane a
-    ON f.operating_carrier = a.iata_code
-GROUP BY a.name
-ORDER BY cancellation_rate DESC;"""
-
-
-#..........................aircraft_ranking.....................................
-
-best_performing_aircraft = """SELECT
-    a.name AS aircraft_type,
-    COUNT(f.flight_id) AS total_flights,
-    COUNT(
-        CASE
-            WHEN f.arr_delay <= 0 THEN 1
-        END
-    ) * 100.0
-    / NULLIF(
-        COUNT(
-            CASE
-                WHEN f.arr_delay IS NOT NULL THEN 1
-            END
-        ),
-        0
-    ) AS on_time_percent
-FROM flight f
-JOIN airplane a
-    ON f.operating_carrier = a.iata_code
-GROUP BY a.name
-HAVING COUNT(f.flight_id) >= 100
-ORDER BY on_time_percent DESC
-LIMIT 5;"""
-
-problem_aircraft = """SELECT
-    a.name AS aircraft_type,
-    COUNT(f.flight_id) AS total_flights,
-    AVG(f.arr_delay) AS avg_delay
-FROM flight f
-JOIN airplane a
-    ON f.operating_carrier = a.iata_code
-WHERE f.arr_delay IS NOT NULL
-GROUP BY a.name
-HAVING COUNT(f.flight_id) >= 100
-ORDER BY avg_delay DESC
-LIMIT 5;"""
+aircraft_type_list = """SELECT
+    name,
+    iata_code,
+    icao_code
+FROM airplane
+ORDER BY name;"""

@@ -17,9 +17,7 @@ sys.path.insert(0, str(ROOT_DIR))
 # DATA SERVICE
 # ============================================================
 
-from src.airport_data_platform.services.dashborad_data import (
-    load_flight_operation_data
-)
+from src.airport_data_platform.services.dashborad_data import load_flight_operation_data
 
 
 # ============================================================
