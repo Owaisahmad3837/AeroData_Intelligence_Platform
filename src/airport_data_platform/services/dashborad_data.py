@@ -10,7 +10,7 @@ from src.airport_data_platform.config.db_connection import (
     local_db_connection
 )
 
-from src.airport_data_platform.Query.Operation.Operation_Query import (
+from src.airport_data_platform.Query.Operation_Query import (
     TOTAL_FLIGHTS,
     ON_TIME_PERFORMANCE,
     CANCELLATION_RATE,
@@ -239,16 +239,19 @@ def load_flight_operation_data():
 import streamlit as st
 import pandas as pd
 
-from src.airport_data_platform.Query.Operation.Analysis_query import (
-    query_delayed_flights,
+from src.airport_data_platform.Query.Analysis_query import (
     query_total_flights,
+    query_delayed_flights,
+    query_delay_rate,
+    query_avg_delay,
     query_airline_performance,
     query_airport_performance,
-    query_avg_delay,
-    query_delay_rate
+      query_cancelled_flights,
+    query_cancellation_rate,
+    query_airline_cancellation,
+    query_airport_cancellation,
+    query_cancellation_reason
 )
-
-
 
 @st.cache_data
 def load_analysis_data():
@@ -257,48 +260,102 @@ def load_analysis_data():
 
     data = {}
 
-    # =========================
-    # KPI DATA
-    # =========================
-
-    data["total_flights"] = pd.read_sql(
+    total_flights_df = pd.read_sql(
         query_total_flights,
         conn
-    ).iloc[0]["total_flights"]
+    )
+    data["total_flights"] = total_flights_df.iloc[0, 0]
 
-    data["delayed_flights"] = pd.read_sql(
+    delayed_flights_df = pd.read_sql(
         query_delayed_flights,
         conn
-    ).iloc[0]["delayed_flights"]
+    )
+    data["delayed_flights"] = delayed_flights_df.iloc[0, 0]
 
-    data["delay_rate"] = pd.read_sql(
+    delay_rate_df = pd.read_sql(
         query_delay_rate,
         conn
-    ).iloc[0]["delay_rate"]
+    )
+    data["delay_rate"] = delay_rate_df.iloc[0, 0]
 
-    data["avg_delay"] = pd.read_sql(
+    avg_delay_df = pd.read_sql(
         query_avg_delay,
         conn
-    ).iloc[0]["avg_delay"]
-
-    # =========================
-    # AIRLINE PERFORMANCE
-    # =========================
+    )
+    data["avg_delay"] = avg_delay_df.iloc[0, 0]
 
     data["airline_performance"] = pd.read_sql(
         query_airline_performance,
         conn
     )
 
-    # =========================
-    # AIRPORT PERFORMANCE
-    # =========================
-
     data["airport_performance"] = pd.read_sql(
         query_airport_performance,
+        conn
+    )
+
+    total_flights_df = pd.read_sql(
+        query_total_flights,
+        conn
+    )
+
+    data["total_flights"] = total_flights_df.iloc[0, 0]
+
+
+    # --------------------------------------------------------
+    # 2. Cancelled Flights
+    # --------------------------------------------------------
+
+    cancelled_flights_df = pd.read_sql(
+        query_cancelled_flights,
+        conn
+    )
+
+    data["cancelled_flights"] = cancelled_flights_df.iloc[0, 0]
+
+
+    # --------------------------------------------------------
+    # 3. Cancellation Rate
+    # --------------------------------------------------------
+
+    cancellation_rate_df = pd.read_sql(
+        query_cancellation_rate,
+        conn
+    )
+
+    data["cancellation_rate"] = cancellation_rate_df.iloc[0, 0]
+
+
+    # --------------------------------------------------------
+    # 4. Airline Cancellation
+    # --------------------------------------------------------
+
+    data["airline_cancellation"] = pd.read_sql(
+        query_airline_cancellation,
+        conn
+    )
+
+
+    # --------------------------------------------------------
+    # 5. Airport Cancellation
+    # --------------------------------------------------------
+
+    data["airport_cancellation"] = pd.read_sql(
+        query_airport_cancellation,
+        conn
+    )
+
+
+    # --------------------------------------------------------
+    # 6. Cancellation Reasons
+    # --------------------------------------------------------
+
+    data["cancellation_reason"] = pd.read_sql(
+        query_cancellation_reason,
         conn
     )
 
     conn.close()
 
     return data
+

@@ -28,9 +28,10 @@ st.set_page_config(
 # NAVIGATION
 # ============================================================
 
-from src.airport_data_platform.services.dashborad_data import load_flight_operation_data
+from src.airport_data_platform.services.dashborad_data import (load_flight_operation_data,load_analysis_data)
 
 load_flight_operation_data()
+load_analysis_data()
 
 from navigation import create_navigation
 

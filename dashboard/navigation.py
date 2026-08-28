@@ -12,6 +12,7 @@ PAGES_DIR = DASHBOARD_DIR / "pages"
 
 BI_DIR = PAGES_DIR / "Business_Intelligence"
 Op_DIR = PAGES_DIR / "Operations"
+An_DIR = PAGES_DIR / "analytics"
 
 
 # ============================================================
@@ -59,7 +60,7 @@ def create_navigation():
             ),
 
         ],
-          "📊 Operations": [
+          "🌦️Operations": [
         
                     st.Page(
                         Op_DIR / "flight_operation.py",
@@ -79,6 +80,31 @@ def create_navigation():
 
 
                     ],
+
+
+
+
+
+                     "📊 Analytics": [
+                            
+                                        st.Page(
+                                            An_DIR / "delay_analysis.py",
+                                            title="Delay Analysis",
+                                            icon="📊"
+                                        ),
+                                         st.Page(
+                                                                                    An_DIR / "cancellation.py",
+                                                                                    title="cancellation Analysis",
+                                                                                    icon="📊"
+                                                                                ),
+                                        
+                    
+                                        ],
+
+
+
+
+
     }
 
     return st.navigation(pages)
