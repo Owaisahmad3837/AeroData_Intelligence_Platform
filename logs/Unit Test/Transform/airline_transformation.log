@@ -1,0 +1,6 @@
+2026-09-05 01:47:42,946 - INFO - Starting airline transformation test.
+2026-09-05 01:47:42,960 - INFO - Test dataset created.
+2026-09-05 01:48:02,146 - INFO - Starting airline transformation test.
+2026-09-05 01:48:02,161 - INFO - Test dataset created.
+2026-09-05 01:48:02,183 - INFO - Output rows: 3
+2026-09-05 01:48:02,183 - INFO - Airline transformation test passed successfully.

@@ -11,7 +11,7 @@ from src.airport_data_platform.config.logging_config import logging_config as lo
 
 
 def test_flight_validation(tmp_path):
-    logger = log("Unit Test", "flight_log_validation")
+    logger = log("Unit Test/Validation", "flight_log_validation")
 
     logger.info("Starting flight validation test.")
 

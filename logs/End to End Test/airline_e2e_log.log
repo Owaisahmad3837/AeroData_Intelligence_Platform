@@ -1,0 +1,7 @@
+2026-09-05 03:15:01,732 - INFO - Starting airline E2E test
+2026-09-05 03:15:01,765 - INFO - Test airline data created
+2026-09-05 03:15:01,765 - INFO - Running airline validation
+2026-09-05 03:15:01,799 - INFO - Airline validation passed
+2026-09-05 03:15:01,799 - INFO - Running airline transformation
+2026-09-05 03:15:01,815 - INFO - Airline transformation passed
+2026-09-05 03:15:01,815 - INFO - Airline E2E test completed successfully

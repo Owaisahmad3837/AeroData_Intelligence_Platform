@@ -11,7 +11,7 @@ from src.airport_data_platform.config.logging_config import logging_config as lo
 
 
 def test_weather_validation(tmp_path):
-    logger = log("Unit Test", "weather_log_validation")
+    logger = log("Unit Test/Validation", "weather_log_validation")
 
     logger.info("Starting weather validation test.")
 

@@ -1,0 +1,23 @@
+2026-09-05 01:32:28,300 - INFO - Starting route validation testing.....
+2026-09-05 01:32:28,300 - INFO - Creating temporary folder.
+2026-09-05 01:32:28,300 - INFO - Temporary input file: /tmp/pytest-of-owaisahmad3837/pytest-43/test_route_validation0/routes.csv
+2026-09-05 01:32:28,301 - INFO - Temporary good output file: /tmp/pytest-of-owaisahmad3837/pytest-43/test_route_validation0/good/route_data/routes.csv
+2026-09-05 01:32:28,301 - INFO - Temporary bad output file: /tmp/pytest-of-owaisahmad3837/pytest-43/test_route_validation0/bad/route_data/routes.csv
+2026-09-05 01:32:28,301 - INFO - Creating temporary output folders.
+2026-09-05 01:32:28,301 - INFO - Temporary output folders created.
+2026-09-05 01:32:28,301 - INFO - Creating test dataset.
+2026-09-05 01:32:28,309 - INFO - Test dataset created with 4 rows.
+2026-09-05 01:32:28,309 - INFO - Saving test dataset to temporary input file.
+2026-09-05 01:32:28,312 - INFO - Test dataset saved successfully.
+2026-09-05 01:32:28,313 - INFO - Patching production file paths.
+2026-09-05 01:32:28,313 - INFO - Production paths patched successfully.
+2026-09-05 01:32:28,313 - INFO - Running route validation function.
+2026-09-05 01:32:28,341 - INFO - Route validation function completed.
+2026-09-05 01:32:28,341 - INFO - Checking whether output files were created.
+2026-09-05 01:32:28,342 - INFO - Good output file exists.
+2026-09-05 01:32:28,342 - INFO - Bad output file exists.
+2026-09-05 01:32:28,342 - INFO - Reading validation results.
+2026-09-05 01:32:28,348 - INFO - Good rows: 4
+2026-09-05 01:32:28,348 - INFO - Bad rows: 0
+2026-09-05 01:32:28,348 - INFO - Checking validation results.
+2026-09-05 01:32:28,348 - INFO - Route validation test passed successfully.

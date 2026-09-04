@@ -1,0 +1,11 @@
+2026-09-05 01:32:00,440 - INFO - Starting testing.....
+2026-09-05 01:32:00,440 - INFO - Create temporary folder.
+2026-09-05 01:32:00,440 - INFO - Create dataFrame.
+2026-09-05 01:32:00,448 - INFO - read dataFrame.
+2026-09-05 01:32:00,452 - INFO - Patching Path to use temporary folder.
+2026-09-05 01:32:00,453 - INFO - Calling download_airplane_data function.
+2026-09-05 01:32:00,466 - INFO - airplane_validation function executed successfully.
+2026-09-05 01:32:00,467 - INFO - Checking if the good and bad files exist.
+2026-09-05 01:32:00,467 - INFO - Checking if the bad file exists.
+2026-09-05 01:32:00,467 - INFO - Reading good and bad files.
+2026-09-05 01:32:00,469 - INFO - Reading bad files.

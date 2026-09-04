@@ -2,7 +2,7 @@ import pandas as pd
 from pathlib import Path
 from ..config.logging_config import logging_config
 
-airplane_file=Path("data/raw/airport_data/airports.csv")
+airports_file=Path("data/raw/airport_data/airports.csv")
 output_good_file=Path("data/validation/good/airports_data/airports.csv")
 output_bad_file=Path("data/validation/bad/airports_data/airports.csv")
 
@@ -20,16 +20,16 @@ def airport_validation():
   log.info("checking airports file csv...")
   print("airports airport file csv... ")
 
-  if not airplane_file.exists():
+  if not airports_file.exists():
       print("No csv airports file")
       log.warning("no csv airports file exist first check it")
       return
   
   output_good_file.parent.mkdir(parents=True, exist_ok=True)
   output_bad_file.parent.mkdir(parents=True, exist_ok=True)
-  print(f"File is avabile and location is {airplane_file}.Now start reading...")
-  log.info(f"File is avabile and location is {airplane_file}.Now start reading...")
-  df=pd.read_csv(airplane_file)
+  print(f"File is avabile and location is {airports_file}.Now start reading...")
+  log.info(f"File is avabile and location is {airports_file}.Now start reading...")
+  df=pd.read_csv(airports_file)
   print("reading full file.")
   log.info("reading full file.")
 

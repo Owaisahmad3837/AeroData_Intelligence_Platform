@@ -1,0 +1,8 @@
+2026-09-05 01:28:09,243 - INFO - Starting testing.....
+2026-09-05 01:28:09,243 - INFO - Create temporary folder.
+2026-09-05 01:28:09,244 - INFO - Temporary folder created at: /tmp/pytest-of-owaisahmad3837/pytest-35/test_download_route_data0/data/raw/route_test_data
+2026-09-05 01:28:09,244 - INFO - Patching Path to use temporary folder.
+2026-09-05 01:28:09,245 - INFO - Calling download_route_data function.
+2026-09-05 01:28:09,246 - INFO - download_route_data function executed successfully.
+2026-09-05 01:28:09,247 - INFO - Checking if the temporary folder exists.
+2026-09-05 01:28:09,247 - INFO - Checking kaggle command.

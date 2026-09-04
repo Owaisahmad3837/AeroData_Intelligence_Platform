@@ -1,0 +1,11 @@
+2026-09-05 01:32:14,822 - INFO - Starting testing.....
+2026-09-05 01:32:14,823 - INFO - Create temporary folder.
+2026-09-05 01:32:14,823 - INFO - Create dataFrame.
+2026-09-05 01:32:14,838 - INFO - Writing dataFrame to temporary CSV.
+2026-09-05 01:32:14,845 - INFO - Patching file paths to use temporary files.
+2026-09-05 01:32:14,846 - INFO - Calling airport_validation function.
+2026-09-05 01:32:14,883 - INFO - airport_validation function executed successfully.
+2026-09-05 01:32:14,883 - INFO - Checking if the good file exists.
+2026-09-05 01:32:14,884 - INFO - Checking if the bad file exists.
+2026-09-05 01:32:14,884 - INFO - Reading good and bad files.
+2026-09-05 01:32:14,887 - INFO - Reading bad file.

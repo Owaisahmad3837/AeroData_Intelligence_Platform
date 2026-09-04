@@ -1,0 +1,14 @@
+2026-09-05 03:16:49,946 - INFO - Starting airport E2E test
+2026-09-05 03:16:49,962 - INFO - Test airport data created
+2026-09-05 03:16:49,962 - INFO - Running airport validation
+2026-09-05 03:16:49,992 - INFO - Airport validation passed
+2026-09-05 03:16:49,992 - INFO - Running airport transformation
+2026-09-05 03:16:50,011 - INFO - Airport transformation passed
+2026-09-05 03:16:50,011 - INFO - Airport E2E test completed successfully
+2026-09-05 03:17:28,506 - INFO - Starting airport E2E test
+2026-09-05 03:17:28,527 - INFO - Test airport data created
+2026-09-05 03:17:28,527 - INFO - Running airport validation
+2026-09-05 03:17:28,558 - INFO - Airport validation passed
+2026-09-05 03:17:28,558 - INFO - Running airport transformation
+2026-09-05 03:17:28,575 - INFO - Airport transformation passed
+2026-09-05 03:17:28,575 - INFO - Airport E2E test completed successfully

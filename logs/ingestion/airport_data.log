@@ -8,3 +8,8 @@
 2026-09-04 22:47:28,270 - INFO - Data folder created successfully.
 2026-09-04 22:47:28,270 - INFO - Downloading airport data from Kaggle...
 2026-09-04 22:47:28,270 - INFO - Airport data downloaded successfully.
+2026-09-05 01:28:26,486 - INFO - Checking data folder.
+2026-09-05 01:28:26,486 - INFO - Data folder does not exist. Creating it.
+2026-09-05 01:28:26,487 - INFO - Data folder created successfully.
+2026-09-05 01:28:26,487 - INFO - Downloading airport data from Kaggle...
+2026-09-05 01:28:26,487 - INFO - Airport data downloaded successfully.

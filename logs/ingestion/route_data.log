@@ -13,3 +13,8 @@
 2026-09-04 23:03:29,319 - INFO - Data folder created successfully.
 2026-09-04 23:03:29,319 - INFO - Downloading route data from Kaggle...
 2026-09-04 23:03:29,320 - INFO - Route data downloaded successfully.
+2026-09-05 01:28:09,245 - INFO - Checking data folder.
+2026-09-05 01:28:09,246 - INFO - Data folder does not exist. Creating it.
+2026-09-05 01:28:09,246 - INFO - Data folder created successfully.
+2026-09-05 01:28:09,246 - INFO - Downloading route data from Kaggle...
+2026-09-05 01:28:09,246 - INFO - Route data downloaded successfully.

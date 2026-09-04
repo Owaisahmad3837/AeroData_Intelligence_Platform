@@ -1,0 +1,7 @@
+2026-09-05 03:18:01,854 - INFO - Starting route E2E test
+2026-09-05 03:18:01,871 - INFO - Test route data created
+2026-09-05 03:18:01,871 - INFO - Running route validation
+2026-09-05 03:18:01,904 - INFO - Route validation passed
+2026-09-05 03:18:01,905 - INFO - Running route transformation
+2026-09-05 03:18:01,920 - INFO - Route transformation passed
+2026-09-05 03:18:01,920 - INFO - Route E2E test completed successfully

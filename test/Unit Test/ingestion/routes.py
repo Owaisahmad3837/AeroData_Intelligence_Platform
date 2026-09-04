@@ -9,7 +9,7 @@ from src.airport_data_platform.config.logging_config import logging_config as lo
 
 
 def test_download_route_data(tmp_path):
-  logger=log("Unit Test","route_log")
+  logger=log("Unit Test/Ingestion","route_log")
 
   logger.info("Starting testing.....")
 

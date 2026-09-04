@@ -11,7 +11,7 @@ from src.airport_data_platform.config.logging_config import logging_config as lo
 
 
 def test_airport_validation(tmp_path):
-    logger = log("Unit Test", "airport_log_validation")
+    logger = log("Unit Test/Validation", "airport_log_validation")
 
     logger.info("Starting testing.....")
     logger.info("Create temporary folder.")

@@ -1,0 +1,8 @@
+2026-09-05 01:29:37,136 - INFO - Starting testing.....
+2026-09-05 01:29:37,137 - INFO - Create temporary folder.
+2026-09-05 01:29:37,137 - INFO - Temporary folder created at: /tmp/pytest-of-owaisahmad3837/pytest-38/test_download_flight_data0/data/raw/flight_test_data
+2026-09-05 01:29:37,137 - INFO - Patching Path to use temporary folder.
+2026-09-05 01:29:37,139 - INFO - Calling download_flight_data function.
+2026-09-05 01:29:37,140 - INFO - download_flight_data function executed successfully.
+2026-09-05 01:29:37,140 - INFO - Checking if the temporary folder exists.
+2026-09-05 01:29:37,140 - INFO - Checking kaggle command.

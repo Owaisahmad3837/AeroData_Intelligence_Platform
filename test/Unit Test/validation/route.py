@@ -10,7 +10,7 @@ from src.airport_data_platform.validation.route import route_validation
 
 def test_route_validation(tmp_path):
 
-    logger = log("Unit Test", "route_log_validation")
+    logger = log("Unit Test/Validation", "route_log_validation")
     logger.info("Starting route validation testing.....")
 
     logger.info("Creating temporary folder.")

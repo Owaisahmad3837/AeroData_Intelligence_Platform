@@ -14,3 +14,7 @@
 2026-09-04 22:56:45,852 - INFO - Data folder does not exist. Creating it.
 2026-09-04 22:56:45,852 - INFO - Downloading flight data from Kaggle.
 2026-09-04 22:56:45,853 - INFO - Flight data downloaded successfully.
+2026-09-05 01:29:37,139 - INFO - Checking data folder.
+2026-09-05 01:29:37,139 - INFO - Data folder does not exist. Creating it.
+2026-09-05 01:29:37,140 - INFO - Downloading flight data from Kaggle.
+2026-09-05 01:29:37,140 - INFO - Flight data downloaded successfully.
