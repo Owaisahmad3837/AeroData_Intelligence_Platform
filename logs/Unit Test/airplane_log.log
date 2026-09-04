@@ -1,0 +1,16 @@
+2026-09-04 22:39:44,361 - INFO - Starting testing.....
+2026-09-04 22:39:44,361 - INFO - Create temporary folder.
+2026-09-04 22:39:44,361 - INFO - Temporary folder created at: /tmp/pytest-of-owaisahmad3837/pytest-3/test_download_airplane_data0/data/raw/airplane_test_data
+2026-09-04 22:39:44,361 - INFO - Patching Path to use temporary folder.
+2026-09-04 22:42:47,814 - INFO - Starting testing.....
+2026-09-04 22:42:47,814 - INFO - Create temporary folder.
+2026-09-04 22:42:47,814 - INFO - Temporary folder created at: /tmp/pytest-of-owaisahmad3837/pytest-4/test_download_airplane_data0/data/raw/airplane_test_data
+2026-09-04 22:42:47,814 - INFO - Patching Path to use temporary folder.
+2026-09-04 22:45:39,873 - INFO - Starting testing.....
+2026-09-04 22:45:39,873 - INFO - Create temporary folder.
+2026-09-04 22:45:39,873 - INFO - Temporary folder created at: /tmp/pytest-of-owaisahmad3837/pytest-5/test_download_airplane_data0/data/raw/airplane_test_data
+2026-09-04 22:45:39,873 - INFO - Patching Path to use temporary folder.
+2026-09-04 22:45:39,875 - INFO - Calling download_airplane_data function.
+2026-09-04 22:45:39,876 - INFO - download_airplane_data function executed successfully.
+2026-09-04 22:45:39,876 - INFO - Checking if the temporary folder exists.
+2026-09-04 22:45:39,876 - INFO - Checking kaggle command.

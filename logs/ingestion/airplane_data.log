@@ -3,3 +3,8 @@
 2026-08-12 04:05:28,367 - INFO - Data folder created successfully.
 2026-08-12 04:05:28,367 - INFO - Downloading airplane data from Kaggle...
 2026-08-12 04:05:52,148 - INFO - Airplane data downloaded successfully.
+2026-09-04 22:45:39,875 - INFO - Checking data folder.
+2026-09-04 22:45:39,875 - INFO - Data folder does not exist. Creating it.
+2026-09-04 22:45:39,876 - INFO - Data folder created successfully.
+2026-09-04 22:45:39,876 - INFO - Downloading airplane data from Kaggle...
+2026-09-04 22:45:39,876 - INFO - Airplane data downloaded successfully.

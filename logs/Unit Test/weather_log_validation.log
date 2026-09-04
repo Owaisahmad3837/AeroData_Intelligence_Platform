@@ -1,0 +1,15 @@
+2026-09-04 23:43:39,590 - INFO - Starting weather validation test.
+2026-09-04 23:43:39,590 - INFO - Temporary input file: /tmp/pytest-of-owaisahmad3837/pytest-31/test_weather_validation0/weather.parquet
+2026-09-04 23:43:39,590 - INFO - Temporary good output file: /tmp/pytest-of-owaisahmad3837/pytest-31/test_weather_validation0/good/weather.parquet
+2026-09-04 23:43:39,590 - INFO - Temporary bad output file: /tmp/pytest-of-owaisahmad3837/pytest-31/test_weather_validation0/bad/weather.parquet
+2026-09-04 23:43:39,590 - INFO - Temporary output folders created.
+2026-09-04 23:43:39,597 - INFO - Test dataset created with 4 rows.
+2026-09-04 23:43:39,610 - INFO - Test dataset saved successfully.
+2026-09-04 23:43:39,610 - INFO - Production paths patched successfully.
+2026-09-04 23:43:39,611 - INFO - Running weather validation.
+2026-09-04 23:43:39,647 - INFO - Weather validation completed.
+2026-09-04 23:43:39,647 - INFO - Good output file exists.
+2026-09-04 23:43:39,647 - INFO - Bad output file exists.
+2026-09-04 23:43:39,655 - INFO - Good rows: 4
+2026-09-04 23:43:39,655 - INFO - Bad rows: 0
+2026-09-04 23:43:39,655 - INFO - Weather validation test passed successfully.

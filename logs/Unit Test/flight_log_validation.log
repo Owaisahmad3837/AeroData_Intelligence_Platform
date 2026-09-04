@@ -1,0 +1,13 @@
+2026-09-04 23:45:23,545 - INFO - Starting flight validation test.
+2026-09-04 23:45:23,545 - INFO - Input file: /tmp/pytest-of-owaisahmad3837/pytest-32/test_flight_validation0/flight_data_2024.csv
+2026-09-04 23:45:23,545 - INFO - Good output file: /tmp/pytest-of-owaisahmad3837/pytest-32/test_flight_validation0/good/flight_data.csv
+2026-09-04 23:45:23,545 - INFO - Bad output file: /tmp/pytest-of-owaisahmad3837/pytest-32/test_flight_validation0/bad/flight_data.csv
+2026-09-04 23:45:23,545 - INFO - Creating test dataset.
+2026-09-04 23:45:23,550 - INFO - Test dataset created with 4 rows.
+2026-09-04 23:45:23,553 - INFO - Test dataset saved successfully.
+2026-09-04 23:45:23,553 - INFO - Production paths patched.
+2026-09-04 23:45:23,564 - INFO - Flight validation completed.
+2026-09-04 23:45:23,564 - INFO - Output files created successfully.
+2026-09-04 23:45:23,567 - INFO - Good rows: 4
+2026-09-04 23:45:23,567 - INFO - Bad rows: 0
+2026-09-04 23:45:23,567 - INFO - Flight validation test passed successfully.

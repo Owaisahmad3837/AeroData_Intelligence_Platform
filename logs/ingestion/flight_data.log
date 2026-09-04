@@ -10,3 +10,7 @@
 2026-08-12 01:57:15,996:INFO:Data folder exists.
 2026-08-12 01:57:15,996:INFO:Downloading flight data from Kaggle.
 2026-08-12 02:32:24,533:INFO:Flight data downloaded successfully.
+2026-09-04 22:56:45,851 - INFO - Checking data folder.
+2026-09-04 22:56:45,852 - INFO - Data folder does not exist. Creating it.
+2026-09-04 22:56:45,852 - INFO - Downloading flight data from Kaggle.
+2026-09-04 22:56:45,853 - INFO - Flight data downloaded successfully.

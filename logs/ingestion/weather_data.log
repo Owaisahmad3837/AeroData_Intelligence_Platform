@@ -8,3 +8,13 @@
 2026-08-13 01:00:07,804 - INFO - Output file: data/raw/weather_data/era5_2024_23utc.zip
 2026-08-13 04:07:27,115 - INFO - Weather data downloaded successfully.
 2026-08-13 04:07:27,116 - INFO - Weather data saved to: data/raw/weather_data/era5_2024_23utc.zip
+2026-09-04 23:03:50,065 - INFO - Checking weather data folder.
+2026-09-04 23:03:50,065 - INFO - Weather data folder does not exist. Creating it.
+2026-09-04 23:03:50,066 - INFO - Weather data folder created successfully.
+2026-09-04 23:03:50,066 - INFO - Connecting to Copernicus CDS...
+2026-09-04 23:03:50,066 - INFO - Connected to Copernicus CDS successfully.
+2026-09-04 23:03:50,066 - INFO - Starting ERA5 weather data download.
+2026-09-04 23:03:50,066 - INFO - Dataset: reanalysis-era5-single-levels
+2026-09-04 23:03:50,067 - INFO - Output file: /tmp/pytest-of-owaisahmad3837/pytest-13/test_download_weather_data0/data/raw/airline_test_data/era5_2024_23utc.zip
+2026-09-04 23:03:50,067 - INFO - Weather data downloaded successfully.
+2026-09-04 23:03:50,067 - INFO - Weather data saved to: /tmp/pytest-of-owaisahmad3837/pytest-13/test_download_weather_data0/data/raw/airline_test_data/era5_2024_23utc.zip

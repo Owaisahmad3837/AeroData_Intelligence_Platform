@@ -1,0 +1,16 @@
+2026-09-04 23:12:22,830 - INFO - Starting testing.....
+2026-09-04 23:12:22,831 - INFO - Create temporary folder.
+2026-09-04 23:12:22,831 - INFO - Create dataFrame.
+2026-09-04 23:12:22,845 - INFO - read dataFrame.
+2026-09-04 23:12:22,852 - INFO - Patching Path to use temporary folder.
+2026-09-04 23:16:48,610 - INFO - Starting testing.....
+2026-09-04 23:16:48,610 - INFO - Create temporary folder.
+2026-09-04 23:16:48,610 - INFO - Create dataFrame.
+2026-09-04 23:16:48,614 - INFO - read dataFrame.
+2026-09-04 23:16:48,617 - INFO - Patching Path to use temporary folder.
+2026-09-04 23:16:48,618 - INFO - Calling download_airplane_data function.
+2026-09-04 23:16:48,656 - INFO - airline_validation function executed successfully.
+2026-09-04 23:16:48,656 - INFO - Checking if the good and bad files exist.
+2026-09-04 23:16:48,656 - INFO - Checking if the bad file exists.
+2026-09-04 23:16:48,656 - INFO - Reading good and bad files.
+2026-09-04 23:16:48,658 - INFO - Reading bad files.

@@ -1,0 +1,32 @@
+2026-09-04 23:18:43,500 - INFO - Starting testing.....
+2026-09-04 23:18:43,501 - INFO - Create temporary folder.
+2026-09-04 23:18:43,501 - INFO - Create dataFrame.
+2026-09-04 23:18:43,505 - INFO - read dataFrame.
+2026-09-04 23:18:43,507 - INFO - Patching Path to use temporary folder.
+2026-09-04 23:18:43,508 - INFO - Calling download_airplane_data function.
+2026-09-04 23:18:43,512 - INFO - airplane_validation function executed successfully.
+2026-09-04 23:18:43,512 - INFO - Checking if the good and bad files exist.
+2026-09-04 23:20:05,802 - INFO - Starting testing.....
+2026-09-04 23:20:05,802 - INFO - Create temporary folder.
+2026-09-04 23:20:05,802 - INFO - Create dataFrame.
+2026-09-04 23:20:05,809 - INFO - read dataFrame.
+2026-09-04 23:20:05,811 - INFO - Patching Path to use temporary folder.
+2026-09-04 23:20:41,822 - INFO - Starting testing.....
+2026-09-04 23:20:41,822 - INFO - Create temporary folder.
+2026-09-04 23:20:41,822 - INFO - Create dataFrame.
+2026-09-04 23:20:41,828 - INFO - read dataFrame.
+2026-09-04 23:20:41,831 - INFO - Patching Path to use temporary folder.
+2026-09-04 23:20:41,832 - INFO - Calling download_airplane_data function.
+2026-09-04 23:20:41,836 - INFO - airplane_validation function executed successfully.
+2026-09-04 23:20:41,836 - INFO - Checking if the good and bad files exist.
+2026-09-04 23:22:53,888 - INFO - Starting testing.....
+2026-09-04 23:22:53,888 - INFO - Create temporary folder.
+2026-09-04 23:22:53,889 - INFO - Create dataFrame.
+2026-09-04 23:22:53,895 - INFO - read dataFrame.
+2026-09-04 23:22:53,899 - INFO - Patching Path to use temporary folder.
+2026-09-04 23:22:53,900 - INFO - Calling download_airplane_data function.
+2026-09-04 23:22:53,908 - INFO - airplane_validation function executed successfully.
+2026-09-04 23:22:53,908 - INFO - Checking if the good and bad files exist.
+2026-09-04 23:22:53,908 - INFO - Checking if the bad file exists.
+2026-09-04 23:22:53,908 - INFO - Reading good and bad files.
+2026-09-04 23:22:53,909 - INFO - Reading bad files.

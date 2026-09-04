@@ -1,5 +1,5 @@
 from pathlib import Path
-import subprocess 
+import subprocess as sp
 from ..config.logging_config import logging_config as log
 import logging
 
@@ -20,11 +20,11 @@ def download_airplane_data():
     try:
       logging.info("Downloading airplane data from Kaggle...")
 
-      subprocess.run(
+      sp.run(
         ["kaggle","datasets","download","-d",dataset,"-f",file_name_in_kaggle,"-p",str(make_dir)],
         check=True,
       )
       logging.info("Airplane data downloaded successfully.")
 
-    except subprocess.CalledProcessError as e:
+    except sp.CalledProcessError as e:
         logging.error(f"Error occurred while downloading airplane data: {e}")
