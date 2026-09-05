@@ -18,3 +18,11 @@
 2026-09-05 01:29:37,139 - INFO - Data folder does not exist. Creating it.
 2026-09-05 01:29:37,140 - INFO - Downloading flight data from Kaggle.
 2026-09-05 01:29:37,140 - INFO - Flight data downloaded successfully.
+2026-09-05 05:59:50,712 - INFO - Checking data folder.
+2026-09-05 05:59:50,712 - INFO - Flight data already exists. Skipping download.
+2026-09-05 06:02:26,607 - INFO - Checking data folder.
+2026-09-05 06:02:26,608 - INFO - Flight data already exists. Skipping download.
+2026-09-05 06:02:31,130 - INFO - Checking data folder.
+2026-09-05 06:02:31,131 - INFO - Flight data already exists. Skipping download.
+2026-09-05 06:02:59,601 - INFO - Checking data folder.
+2026-09-05 06:02:59,602 - INFO - Flight data already exists. Skipping download.

@@ -28,3 +28,31 @@
 2026-09-05 01:27:36,265 - INFO - Output file: /tmp/pytest-of-owaisahmad3837/pytest-34/test_download_weather_data0/data/raw/airline_test_data/era5_2024_23utc.zip
 2026-09-05 01:27:36,267 - INFO - Weather data downloaded successfully.
 2026-09-05 01:27:36,267 - INFO - Weather data saved to: /tmp/pytest-of-owaisahmad3837/pytest-34/test_download_weather_data0/data/raw/airline_test_data/era5_2024_23utc.zip
+2026-09-05 05:59:50,715 - INFO - Checking weather data folder.
+2026-09-05 05:59:50,716 - INFO - Weather data folder exists.
+2026-09-05 05:59:50,716 - INFO - Connecting to Copernicus CDS...
+2026-09-05 05:59:52,180 - INFO - Connected to Copernicus CDS successfully.
+2026-09-05 05:59:52,180 - INFO - Starting ERA5 weather data download.
+2026-09-05 05:59:52,181 - INFO - Dataset: reanalysis-era5-single-levels
+2026-09-05 05:59:52,181 - INFO - Output file: data/raw/weather_data/era5_2024_23utc.zip
+2026-09-05 06:02:26,610 - INFO - Checking weather data folder.
+2026-09-05 06:02:26,611 - INFO - Weather data folder exists.
+2026-09-05 06:02:26,611 - INFO - Connecting to Copernicus CDS...
+2026-09-05 06:02:30,307 - INFO - Connected to Copernicus CDS successfully.
+2026-09-05 06:02:30,307 - INFO - Starting ERA5 weather data download.
+2026-09-05 06:02:30,308 - INFO - Dataset: reanalysis-era5-single-levels
+2026-09-05 06:02:30,308 - INFO - Output file: data/raw/weather_data/era5_2024_23utc.zip
+2026-09-05 06:02:31,132 - INFO - Checking weather data folder.
+2026-09-05 06:02:31,132 - INFO - Weather data folder exists.
+2026-09-05 06:02:31,132 - INFO - Connecting to Copernicus CDS...
+2026-09-05 06:02:32,452 - INFO - Connected to Copernicus CDS successfully.
+2026-09-05 06:02:32,452 - INFO - Starting ERA5 weather data download.
+2026-09-05 06:02:32,453 - INFO - Dataset: reanalysis-era5-single-levels
+2026-09-05 06:02:32,453 - INFO - Output file: data/raw/weather_data/era5_2024_23utc.zip
+2026-09-05 06:02:59,603 - INFO - Checking weather data folder.
+2026-09-05 06:02:59,603 - INFO - Weather data folder exists.
+2026-09-05 06:02:59,603 - INFO - Connecting to Copernicus CDS...
+2026-09-05 06:03:01,021 - INFO - Connected to Copernicus CDS successfully.
+2026-09-05 06:03:01,021 - INFO - Starting ERA5 weather data download.
+2026-09-05 06:03:01,021 - INFO - Dataset: reanalysis-era5-single-levels
+2026-09-05 06:03:01,022 - INFO - Output file: data/raw/weather_data/era5_2024_23utc.zip
